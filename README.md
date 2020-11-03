@@ -2,4 +2,4 @@
 Files for Revature training
 November 2nd start - .NET batch
 
-to be deleted
+to be deleted or not 
