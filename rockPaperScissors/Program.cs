@@ -53,9 +53,7 @@ namespace rockPaperScissors
         bool? score(Move computerChoice, Move playerChoice) {
             int compare = (int) computerChoice - (int) playerChoice;
             if (compare < 0) compare+=3;
-
-            switch (compare)
-            {
+            switch (compare) {
                 case 1: // computer wins
                     return false;
                 case 2: // player wins
@@ -76,8 +74,7 @@ namespace rockPaperScissors
             Console.WriteLine("Scissors!");
             var playerChoice = (Move) Convert.ToInt32(Console.ReadLine());
             var result = score(computerChoice, playerChoice);
-            switch (result)
-            {
+            switch (result) {
                 case true:
                     System.Console.WriteLine("You win the round.");
                     this.wins++;
