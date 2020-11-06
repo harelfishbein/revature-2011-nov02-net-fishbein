@@ -32,16 +32,20 @@ namespace rockPaperScissors
 
         public RandomStrat() {
             this.rgen = new Random();
-            RandomStrat.count = Enum.GetNames(typeof(Move)).Length;
         }
         public Move choose() {
-            var index = rgen.Next(RandomStrat.count);
+            var index = rgen.Next(3);
             return (Move) index;
         }
     }
 
     class Game {
-        static List<IStrategy> strategies = new List<IStrategy> {new RockStrat(), new PaperStrat(), new ScissorsStrat(), new RockStrat()};
+        static List<IStrategy> strategies = new List<IStrategy> {
+            new RockStrat(), 
+            new PaperStrat(), 
+            new ScissorsStrat(), 
+            new RandomStrat()
+        };
         public uint wins {get; internal set;}
         public uint losses {get; internal set;}
 
