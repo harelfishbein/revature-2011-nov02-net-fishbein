@@ -117,6 +117,7 @@ namespace entity_chnook
             Track track = context.Tracks.First(t => t.TrackId == 2);
             track.Name = "Stopid " + track.Name;
             context.Update<Track>(track);
+            context.SaveChanges();
         }
 
         static void InsertANewTrack()
@@ -126,6 +127,7 @@ namespace entity_chnook
             track.TrackId = 68686868;
             track.Name = "OOboboo";
             context.Tracks.Add(track);
+            context.SaveChanges();
         }
 
         static void DeleteThatTrack()
@@ -133,6 +135,7 @@ namespace entity_chnook
             using var context = new RevatureTrainingContext(s_dbContextOptions);
             var track = context.Tracks.Where(track => track.TrackId == 68686868).First();
             context.Remove<Track>(track);
+            context.SaveChanges();
         }
 
         static void LinqStuff()
