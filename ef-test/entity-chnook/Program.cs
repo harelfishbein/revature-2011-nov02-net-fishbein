@@ -53,20 +53,20 @@ namespace entity_chnook
             // bonus: user input instead of hardcoded stuff...
             // bonus: involve multiple tables besides just track.
 
-            EditOneOfThoseTracks();
+            // EditOneOfThoseTracks();
 
-            Display5Tracks();
-            Console.WriteLine();
+            // Display5Tracks();
+            // Console.WriteLine();
 
-            InsertANewTrack();
+            // InsertANewTrack();
 
-            Display5Tracks();
-            Console.WriteLine();
+            // Display5Tracks();
+            // Console.WriteLine();
 
-            DeleteThatTrack();
+            // DeleteThatTrack();
 
-            Display5Tracks();
-            Console.WriteLine();
+            // Display5Tracks();
+            // Console.WriteLine();
         }
 
         static string GetConnectionString()
