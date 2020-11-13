@@ -114,7 +114,7 @@ namespace entity_chnook
         static void EditOneOfThoseTracks()
         {
             using var context = new RevatureTrainingContext(s_dbContextOptions);
-            Track track = context.Tracks.First(t => t.TrackId == 2);
+            Track track = context.Tracks.First(t => t.TrackId == 2); // context.Tracks.Find(2) // find by primary key
             track.Name = "Stopid " + track.Name;
             context.Update<Track>(track);
             context.SaveChanges();
@@ -125,6 +125,11 @@ namespace entity_chnook
             using var context = new RevatureTrainingContext(s_dbContextOptions);
             var track = new Track();
             track.TrackId = 68686868;
+            track.MediaTypeId = 1;
+            track.UnitPrice = (decimal) 0.0;
+            track.GenreId = 1;
+            track.Genre = context.Genres.Find(1);
+            track.MediaType = null;
             track.Name = "OOboboo";
             context.Tracks.Add(track);
             context.SaveChanges();
