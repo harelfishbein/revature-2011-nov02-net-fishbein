@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"> 
+    <title>HTML Exercise</title>
+    <style type="text/css">
+      table, th, td {
+  border: 1px solid black;
+    }
+    </style>
+  </head>
+  <body>
+ <img src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" alt="Cat photo" />
+      
+
+    <h1>About</h1>
+    <p>Some text about the website.</p>
+    <h2>Our Locations</h2>
+    <ul>
+      <li>USA</li>
+      <ul>
+        <li><a href="localhost:8080">New York</a></li>
+        <li><a href="localhost:8080">Columbus</a></li>
+        <li><a href="localhost:8080">Austin</a></li>
+        <li><a href="localhost:8080">Philly</a></li>
+      </ul>
+      <li>World</li>
+      <ul>
+        <li><a href="localhost">Ottawa</a></li>
+        <li><a href="Sydney"></a></li>
+      </ul>
+    </ul>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Location</th>
+            <th>Topic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>New York</td>
+            <td>JavaScript &amp; jQuery</td>
+          </tr>
+          <tr>
+            <td>San Francisco</td>
+            <td>HTML &amp; CSS</td>
+          </tr>
+      </table>
+
+    <h2>Sign Up!</h2>
+    <form>
+      <div>
+        Name:
+        <input type="text" name="name">
+      </div>
+      <div>
+        Email:
+        <input type="text" name="Email">
+      </div>
+      <div>
+        <select>
+          <option value="1">San Francisco</option>
+          <option value="2">New York</option>
+        </select>
+      </div>
+      <div>
+        <fieldset>
+        <legend>Gender</legend>
+        Female
+        <input type="radio" id="female" name="gender" value="female">
+        Male
+        <input type="radio" id="male" name="gender" value="male">
+        </fieldset>
+      </div>
+      <div>
+        Experience:<br>
+        <textarea name="textarea" rows="8" cols="80"></textarea>
+      </div>
+      <div>
+        <button type="button" name="button">Sign Up</button>
+      </div>
+    </form>
+
+  </body>
+</html>
