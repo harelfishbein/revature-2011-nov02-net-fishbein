@@ -1,0 +1,39 @@
+html {
+	background-color: white;	
+}
+
+
+body {
+	border-color: DarkRed;
+	border-style: solid;
+	border-width: 3px;
+	padding: 4px;
+	background-color: lightyellow;
+	height: 400px;
+	width: 440px;
+	margin: 6px 8px 5px 2px;
+}
+img {
+	border-width: 8px;
+	border-style: solid;
+	border-color: orange;
+	width: 340px;
+	height: 100px;
+	margin: 10px;
+
+}
+body div {
+	border-style: dashed;
+	border-width: 8px;
+	border-color: orange;
+	background-color: yellow;
+	width: 340px;
+	height: 150px;
+	margin: 10px;
+	overflow-y: scroll;
+}
+
+p::first-line {
+  text-decoration: underline;
+  font-weight: bold;
+}
