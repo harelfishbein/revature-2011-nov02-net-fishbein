@@ -1,0 +1,36 @@
+﻿@model SimpleOrderApp.Domain.Location
+
+@{
+  ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+  <h4>Location</h4>
+  <hr />
+  <dl class="row">
+    <dt class="col-sm-2">
+      @*
+        razor has several syntaxes for embedding reusable display logic
+        - HTML helpers - methods on the Html property that take lambda expressions
+              and sometimes anonymous types
+        - tag helpers - meant to look like ordinary html elements, but are processed by razor
+      *@
+      @Html.DisplayNameFor(model => model.Name)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.Name)
+    </dd>
+    <dt class="col-sm-2">
+      @Html.DisplayNameFor(model => model.Stock)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.Stock)
+    </dd>
+  </dl>
+</div>
+<div>
+  @Html.ActionLink("Edit", "Edit", new { id = Model.Name }) |
+  <a asp-action="Index">Back to List</a>
+</div>
