@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SimpleOrderApp.Domain;
+using SimpleOrderApp.WebApp.ViewModels;
 
 namespace SimpleOrderApp.WebApp.Controllers
 {
@@ -40,10 +41,11 @@ namespace SimpleOrderApp.WebApp.Controllers
         // POST: Locations/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create([Bind("Name, Stock")] LocationViewModel location)
         {
             try
             {
+                _repository.Create(new Location(location.Name, location.Stock));
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -53,23 +55,32 @@ namespace SimpleOrderApp.WebApp.Controllers
         }
 
         // GET: Locations/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            return View();
+            var location = _repository.GetAll().First(x => x.Name == id);
+            return View(new LocationViewModel { Name = location.Name, Stock = location.Stock });
         }
 
         // POST: Locations/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(string id, [Bind("Stock")] int stock)
         {
             try
             {
+                var location = _repository.GetAll().First(x => x.Name == id);
+                int difference = location.Stock - stock;
+                if (difference > 0)
+                {
+                    location.DecreaseStock(difference);
+                    _repository.Update(location);
+                }
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                var location = _repository.GetAll().First(x => x.Name == id);
+                return View(location);
             }
         }
 

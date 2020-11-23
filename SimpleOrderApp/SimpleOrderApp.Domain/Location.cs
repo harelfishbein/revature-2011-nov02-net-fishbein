@@ -31,6 +31,11 @@ namespace SimpleOrderApp.Domain
             Name = name;
             Stock = initialStock;
         }
+        public Location()
+        {
+            Name = "Default";
+            Stock = 0;
+        }
 
         public void DecreaseStock(int amount)
         {
